@@ -1,4 +1,6 @@
 import express from "express";
+import { validarNomeServico, validarValorServico, validarDuplicidade } from "./validacoes.js";
+import { criarServico } from "./servicos.js";
 
 const app = express();
 app.use(express.json());
@@ -8,12 +10,14 @@ const servicos = [
         id: 1,
         servico: "alongamento",
         valor: 150,
+        ativo: true,
         imagem: "foto1"
     },
     {
         id: 2,
         servico: "manutenção",
         valor: 80,
+        ativo: true,
         imagem: "foto1"
     }
 ]
@@ -48,37 +52,33 @@ app.get("/servicos/:id", (req, res) => {
 
 app.post("/servicos", (req, res) => {
 
-    if(req.body.servico === ""){
-        return res.status(400).send("Nome do serviço obrigatório, ação cancelada")
+    const erroNome = validarNomeServico(req.body.servico);
+
+    if (erroNome) {
+        return res.status(400).send(erroNome);
     }
 
-    if(req.body.valor <= 0){
-        return res.status(400).send("Valor inválido, necessita ser maior à 0");
+    const erroValor = validarValorServico(req.body.valor);
+
+    if (erroValor) {
+        return res.status(400).send(erroValor);
     }
-    
-    const servicoExiste = servicos.some(servico => servico.servico.toLocaleLowerCase() === req.body.servico.toLowerCase());
-    
-    if (servicoExiste === true){
-       return res.status(409).send("Serviço duplicado, ação cancelada");
-    };
 
-    let novoID = 1;
+    const servicoExiste = validarDuplicidade(servicos, req.body.servico);
 
-    while (servicos.some(servico => servico.id === novoID)){
-        novoID++;
-    };
+    if (servicoExiste) {
+        return res.status(409).send("Serviço duplicado, ação cancelada.");
+    }
 
-    const novoServiço = {
-        id: novoID,
-        servico: req.body.servico,
-        valor: req.body.valor,
-        ativo: true,
-        imagens: "foto1"
-    };
+    const novoServico = criarServico(
+    servicos,
+    req.body.servico,
+    req.body.valor
+    );
 
-    servicos.push(novoServiço);
-    
-    res.status(201).json(novoServiço);
+    servicos.push(novoServico);
+
+    return res.status(201).json(novoServico);
 });
 
 app.put("/servicos/:id", (req, res) => {
