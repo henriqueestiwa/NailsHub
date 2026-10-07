@@ -1,0 +1,87 @@
+.pagina-galeria { background: var(--areaServico); font-family: "Inter", sans-serif; }
+.galeria-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 28px 5%;
+    background: transparent;
+    max-width: 1440px;
+    margin: auto;
+}
+.pagina-galeria a { color: var(--texto); text-decoration: none; }
+.galeria-marca, .galeria-assinatura { font: 500 30px "Cormorant Garamond", serif; }
+.galeria-voltar { font-size: 11px; letter-spacing: 0.4px; padding: 10px 0; border-bottom: 1px solid var(--rosa-claro); }
+.galeria-voltar span { margin-right: 10px; }
+.pagina-galeria a:hover { color: #d9afbd; }
+.galeria-main { max-width: 1440px; padding: 55px 5% 40px; margin: auto; }
+.galeria-apresentacao { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 35px; margin-bottom: 28px; border-bottom: 1px solid var(--roxo-secundario); }
+.galeria-sobretitulo { font-size: 9px; letter-spacing: 2px; color: var(--texto-secundario); margin-bottom: 12px; }
+.galeria-apresentacao h1 { font: 400 clamp(60px, 8vw, 100px) "Cormorant Garamond", serif; line-height: 1; letter-spacing: -2px; }
+.galeria-apresentacao h1 span { color: var(--rosa); }
+.galeria-resumo { font-size: 11px; line-height: 1.8; color: var(--texto-secundario); text-align: right; }
+.galeria-total { color: var(--texto); margin-bottom: 6px; letter-spacing: 1px; }
+.galeria-grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.foto-miniatura { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: var(--roxo-secundario); border: none; padding: 0; cursor: zoom-in; border-radius: 3px; }
+.foto-miniatura img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.foto-miniatura:hover img { transform: scale(1.035); }
+.foto-numero { position: absolute; bottom: 14px; left: 14px; padding: 6px 8px; font: 10px "Inter", sans-serif; color: var(--texto); background: rgba(16,4,15,0.65); border: 1px solid rgba(243,237,234,0.15); border-radius: 2px; }
+.galeria-dica { text-align: center; color: var(--texto-secundario); font-size: 10px; margin-top: 28px; letter-spacing: 0.4px; }
+.galeria-footer { padding: 20px 5%; }
+.pagina-galeria button:focus-visible, .pagina-galeria a:focus-visible { outline: 2px solid #d9afbd; outline-offset: 5px; }
+.pagina-galeria.visualizacao-aberta { overflow: hidden; }
+.galeria-visualizador { position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh; max-width: none; max-height: none; border: none; padding: 0; background: var(--areaServico); color: var(--texto); overflow: auto; }
+.galeria-visualizador[open] { display: flex; flex-direction: column; }
+.galeria-visualizador::backdrop { background: var(--areaServico); }
+.galeria-visualizador-topo { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 5%; }
+.galeria-fechar { border: none; background: transparent; color: var(--texto-secundario); font: 11px "Inter", sans-serif; padding: 10px; cursor: pointer; }
+.galeria-fechar span { font-size: 24px; margin-left: 12px; vertical-align: middle; }
+.galeria-fechar:hover { color: #d9afbd; }
+.galeria-palco { flex: 1; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,3.5fr) minmax(0,1fr); align-items: center; gap: 28px; padding: 18px 0; }
+.galeria-destaque { min-width: 0; text-align: center; }
+.galeria-foto-principal { display: block; width: auto; height: auto; max-width: 100%; max-height: 60vh; max-height: 60dvh; object-fit: contain; margin: auto; border-radius: 2px; box-shadow: 0 18px 60px rgba(0,0,0,0.25); touch-action: pan-y pinch-zoom; }
+.galeria-posicao { margin-top: 18px; color: var(--texto-secundario); font: 10px "Inter", sans-serif; letter-spacing: 2px; }
+.galeria-vizinha { position: relative; border: none; padding: 0; background: var(--roxo-profundo); height: 36vh; height: 36dvh; overflow: hidden; cursor: pointer; color: var(--texto); }
+.galeria-vizinha img { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; filter: blur(2px); transition: opacity 0.25s ease, filter 0.25s ease; }
+.galeria-vizinha:hover img { opacity: 0.65; filter: blur(0); }
+.galeria-vizinha span { position: absolute; inset: 0; display: grid; place-items: center; font-size: 26px; }
+.galeria-vizinha[hidden] { display: block; visibility: hidden; }
+.galeria-faixa { display: flex; justify-content: safe center; gap: 10px; padding: 10px 5%; overflow-x: auto; flex-shrink: 0; }
+.galeria-faixa button { flex-shrink: 0; width: 52px; height: 52px; padding: 3px; border: 1px solid transparent; background: transparent; opacity: 0.45; cursor: pointer; border-radius: 2px; }
+.galeria-faixa button[aria-pressed="true"] { border-color: var(--rosa); opacity: 1; }
+.galeria-faixa button:hover { opacity: 1; }
+.galeria-faixa img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.galeria-instrucoes { color: var(--texto-secundario); text-align: center; padding: 14px 5% 24px; font: 10px "Inter", sans-serif; }
+
+.galeria-pedido { display: flex; justify-content: center; padding: 8px 5%; flex-shrink: 0; }
+.galeria-quero-modelo {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px 20px;
+    border: 1px solid var(--rosa);
+    border-radius: 3px;
+    background: var(--roxo-secundario);
+    font: 500 11px "Inter", sans-serif;
+    letter-spacing: 0.4px;
+}
+.galeria-quero-modelo:hover { background: var(--rosa-claro); }
+
+@media (max-width: 760px) {
+    .galeria-main { padding-top: 30px; }
+    .galeria-grade { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .galeria-apresentacao { align-items: flex-start; flex-direction: column; gap: 18px; }
+    .galeria-resumo { text-align: left; }
+    .galeria-marca, .galeria-assinatura { font-size: 26px; }
+    .galeria-voltar { font-size: 10px; }
+    .galeria-palco { grid-template-columns: 32px minmax(0,1fr) 32px; gap: 10px; }
+    .galeria-vizinha { height: 28dvh; }
+    .galeria-vizinha span { font-size: 20px; }
+    .galeria-foto-principal { max-height: 58dvh; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .foto-miniatura img, .galeria-vizinha img { transition: none; }
+    .foto-miniatura:hover img { transform: none; }
+}

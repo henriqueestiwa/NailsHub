@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daiane Ramos</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="menu">
-            <h1>Daiane Ramos</h1>
+    <header class="header-principal">
+        <nav class="menu" aria-label="Navegação principal">
+            <h1 class="marca"><a href="#inicio">Daiane Ramos</a></h1>
             <div class="opcoes">
-                <a href="">Inicio</a>
-                <a href="">Imagens</a>
-                <a href="">Sobre</a>
-                <a href="">Contato</a>
+                <a href="#inicio">Início</a>
+                <a href="galeria.html">Imagens</a>
+                <a href="#sobre">Sobre</a>
+                <div class="contato-menu">
+                    <button type="button" class="contato-toggle" aria-expanded="false" aria-controls="contato-links">Contato <span aria-hidden="true">⌄</span></button>
+                    <div class="contato-links" id="contato-links" hidden>
+                        <a href="https://www.instagram.com/daiane.ramos_/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span aria-hidden="true">↗</span></a>
+                        <a href="https://wa.me/554797929626?text=Ol%C3%A1%20Daiane%2C%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20por%20favor!" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
             </div>
-            <div class="botao-horario">
-                <a href="">Agendar horário</a>
-            </div>
+            <a class="botao-horario" href="https://wa.me/554797929626?text=Ol%C3%A1%20Daiane%2C%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20por%20favor!" target="_blank" rel="noopener noreferrer">Agendar horário <span aria-hidden="true">↗</span></a>
         </nav>
     </header>
 
     <main>
-        <section class="inicio">
+        <section class="inicio" id="inicio">
             <div class="topo">
                 <p>ALONGAMENTOS • MANUTENÇÃO • NAIL DESIGNER</p>
                 <h2>Mais que unhas,<br> é <span class="estima">autoEstima</span></h2>
-                <h4>Realço a sua beleza com técnicas modernas, acabmentos impecáveis e um atendimento feito especialmente para você!</h4>
+                <h4>Realço a sua beleza com técnicas modernas, acabamentos impecáveis e um atendimento feito especialmente para você!</h4>
                 <div class="topo-botoes">
-                    <a href="">Agende seu horário!</a>
-                    <a href="">Conheça os serviços →</a>
+                    <a class="botao-servicos" href="#servicos">Conheça os serviços <span aria-hidden="true">↓</span></a>
                 </div>
             </div>
             <div class="imagem-principal">
@@ -39,43 +46,76 @@
             </div>
         </section>
 
-        <section class="servicos" id="servicos">
+        <section class="servicos" id="servicos" aria-labelledby="servicos-titulo">
             <div class="servicos-titulo">
-                <h3>Serviços</h3>
-            </div>
-            
-            <div class="servico alongamentos">
-                <span>01</span>
-                <h3>Alongamento</h3>
-                <p>Descrição</p>
-                <span>R$ 150,00</span>
+                <h3 id="servicos-titulo">Serviços</h3>
             </div>
 
-            <div class="servico manutencao">
-                <span>02</span>
-                <h3>Manutenção</h3>
-                <p>Descrição</p>
-                <span>R$ 90,00</span>
-            </div>
+            <div class="servicos-grade">
+                <article class="servico alongamentos ativo">
+                    <span class="servico-numero">01</span>
+                    <div class="servico-cabecalho">
+                        <h4 class="servico-titulo">Alongamento</h4>
+                        <button type="button" class="servico-selecionar" aria-label="Ver detalhes de Alongamento" aria-expanded="true" aria-controls="detalhes-alongamento">
+                            <span class="servico-simbolo" aria-hidden="true">−</span>
+                        </button>
+                    </div>
+                    <div class="servico-detalhes" id="detalhes-alongamento">
+                        <p>Descrição</p>
+                        <span class="servico-preco">R$ 150,00</span>
+                    </div>
+                </article>
 
-            <div class="servico banho-gel">
-                <span>03</span>
-                <h3>Banho em Gel</h3>
-                <p>Descrição</p>
-                <span>R$ 100,00</span>
-            </div>
+                <article class="servico manutencao">
+                    <span class="servico-numero">02</span>
+                    <div class="servico-cabecalho">
+                        <h4 class="servico-titulo">Manutenção</h4>
+                        <button type="button" class="servico-selecionar" aria-label="Ver detalhes de Manutenção" aria-expanded="true" aria-controls="detalhes-manutencao">
+                            <span class="servico-simbolo" aria-hidden="true">+</span>
+                        </button>
+                    </div>
+                    <div class="servico-detalhes" id="detalhes-manutencao">
+                        <p>Descrição</p>
+                        <span class="servico-preco">R$ 90,00</span>
+                    </div>
+                </article>
 
+                <article class="servico banho-gel">
+                    <span class="servico-numero">03</span>
+                    <div class="servico-cabecalho">
+                        <h4 class="servico-titulo">Banho em Gel</h4>
+                        <button type="button" class="servico-selecionar" aria-label="Ver detalhes de Banho em Gel" aria-expanded="true" aria-controls="detalhes-banho-gel">
+                            <span class="servico-simbolo" aria-hidden="true">+</span>
+                        </button>
+                    </div>
+                    <div class="servico-detalhes" id="detalhes-banho-gel">
+                        <p>Descrição</p>
+                        <span class="servico-preco">R$ 100,00</span>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <section class="area-galeria">
+        <section class="area-galeria" aria-labelledby="galeria-titulo">
             <div class="conteiner-img">
-                <img src="assets/FotoServico.jpeg" alt="Foto galeria">
+                <img src="assets/FotoServico.jpeg" alt="Unhas decoradas por Daiane Ramos">
             </div>
             <div class="conteiner-galeria">
-                <h3>Galeria</h3>
-                <div class="galeria">
-
-                </div>
+                <h3 id="galeria-titulo">Galeria</h3>
+                <a class="galeria-carrossel" href="galeria.html" aria-label="Abrir galeria de trabalhos de Daiane Ramos">
+                    <div class="galeria-fotos">
+                    <img class="ativa" src="assets/Galeria/FotoInicio.jpeg" alt="Trabalho de nail design de Daiane Ramos" aria-hidden="false">
+                    <img src="assets/Galeria/FotoServico.jpeg" alt="Unhas decoradas por Daiane Ramos" aria-hidden="true">
+                    <img src="assets/Galeria/FotoTeste.jpeg" alt="Fotografia da galeria de Daiane Ramos" aria-hidden="true">
+                    </div>
+                    <div class="galeria-moldura-rodape" aria-hidden="true">
+                        <span class="galeria-contador">01 / 03</span>
+                        <span class="galeria-indicadores"><span class="ativo"></span><span></span><span></span></span>
+                        <span>↗</span>
+                    </div>
+                </a>
+                <button class="galeria-pausar" type="button" aria-pressed="false">Pausar fotos</button>
+                <a class="botao-servicos" href="galeria.html">Acessar galeria <span aria-hidden="true">→</span></a>
             </div>
         </section>
 
@@ -92,13 +132,17 @@
                 <p>Sei o quanto unhas bonitas e bem cuidadas podem fazer diferença na nossa autoestima e na forma como nos sentimos. Por isso, busco realizar cada trabalho com muito cuidado, atenção e carinho, para que cada cliente saia se sentindo ainda mais bonita e confiante.</p>
                 <p>Será um prazer cuidar das suas unhas também. Venha conhecer meu trabalho e viver essa experiência comigo! ♡</p>
                 
-                <p>WhatsApp</p>
-                <a href="https://wa.me/554797929626?text=Ol%C3%A1%2C%20vim%20pelo%20seu%20site%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas%21"
-                target="_blank">
-                    Agende seu horário!
-                </a>
-                <p>Instagram</p>
-                <a href="https://www.instagram.com/daiane.ramos_/" target="_blank">@daiane.ramos_</a>
+                <p class="contato-rotulo">WhatsApp</p>
+                <div class="contato-linha">
+                    <a href="https://wa.me/554797929626?text=Ol%C3%A1%20Daiane%2C%20vim%20pelo%20seu%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20por%20favor!" target="_blank" rel="noopener noreferrer">(47) 9792-9626</a>
+                    <button type="button" class="copiar" data-texto="(47) 9792-9626" aria-label="Copiar número do WhatsApp">Copiar</button>
+                </div>
+                <p class="contato-rotulo">Instagram</p>
+                <div class="contato-linha">
+                    <a href="https://www.instagram.com/daiane.ramos_/" target="_blank" rel="noopener noreferrer">@daiane.ramos_</a>
+                    <button type="button" class="copiar" data-texto="@daiane.ramos_" aria-label="Copiar nome do Instagram">Copiar</button>
+                </div>
+                <span class="copiar-status" role="status"></span>
             </div>
         </section>      
     </main>

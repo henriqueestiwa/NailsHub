@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria | Daiane Ramos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body class="pagina-galeria">
+    <header class="galeria-header">
+        <a class="galeria-marca" href="index.html">Daiane Ramos</a>
+        <a class="galeria-voltar" href="index.html"><span aria-hidden="true">←</span> Voltar ao início</a>
+    </header>
+    <main class="galeria-main">
+        <div class="galeria-apresentacao">
+            <div><p class="galeria-sobretitulo">DAIANE RAMOS · NAIL DESIGNER</p><h1>Galeria<span>.</span></h1></div>
+            <div class="galeria-resumo"><p class="galeria-total">3 fotografias</p><p>Um olhar mais perto de cada detalhe.</p></div>
+        </div>
+        <section class="galeria-grade" aria-label="Fotografias da galeria">
+                <button type="button" class="foto-miniatura" aria-label="Ampliar fotografia 1" data-foto="assets/Galeria/FotoInicio.jpeg">
+                    <img src="assets/Galeria/FotoInicio.jpeg" alt="Fotografia 1 da galeria de Daiane Ramos" loading="lazy" decoding="async">
+                    <span class="foto-numero" aria-hidden="true">01</span>
+                </button>
+                <button type="button" class="foto-miniatura" aria-label="Ampliar fotografia 2" data-foto="assets/Galeria/FotoServico.jpeg">
+                    <img src="assets/Galeria/FotoServico.jpeg" alt="Fotografia 2 da galeria de Daiane Ramos" loading="lazy" decoding="async">
+                    <span class="foto-numero" aria-hidden="true">02</span>
+                </button>
+                <button type="button" class="foto-miniatura" aria-label="Ampliar fotografia 3" data-foto="assets/Galeria/FotoTeste.jpeg">
+                    <img src="assets/Galeria/FotoTeste.jpeg" alt="Fotografia 3 da galeria de Daiane Ramos" loading="lazy" decoding="async">
+                    <span class="foto-numero" aria-hidden="true">03</span>
+                </button>
+        </section>
+        <p class="galeria-dica">Selecione uma fotografia para ver em destaque.</p>
+    </main>
+    <footer class="galeria-footer"><p>© 2026 Daiane Ramos</p></footer>
+    <dialog class="galeria-visualizador" aria-label="Fotografia em destaque">
+        <div class="galeria-visualizador-topo">
+            <span class="galeria-assinatura">Daiane Ramos</span>
+            <button type="button" class="galeria-fechar" aria-label="Fechar fotografia">Fechar <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="galeria-palco">
+            <button type="button" class="galeria-vizinha galeria-anterior" aria-label="Fotografia anterior"><img alt=""><span aria-hidden="true">←</span></button>
+            <figure class="galeria-destaque"><img class="galeria-foto-principal" alt=""><figcaption class="galeria-posicao" aria-live="polite"></figcaption></figure>
+            <button type="button" class="galeria-vizinha galeria-proxima" aria-label="Próxima fotografia"><img alt=""><span aria-hidden="true">→</span></button>
+        </div>
+        <div class="galeria-faixa" role="group" aria-label="Escolher fotografia"></div>
+        <div class="galeria-pedido"><a class="galeria-quero-modelo" href="https://wa.me/554797929626" target="_blank" rel="noopener noreferrer">Quero este modelo <span aria-hidden="true">↗</span></a></div>
+        <p class="galeria-instrucoes">Setas para navegar · Esc para fechar</p>
+    </dialog>
+    <script src="js/galeria.js"></script>
+</body>
+</html>
