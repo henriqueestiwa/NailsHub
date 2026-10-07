@@ -1,0 +1,646 @@
+:root {
+    /* cores */
+    --preto: #080808;
+    --roxo-profundo: #120212;
+    --roxo-secundario: #2B1025;
+
+    /* areas */
+    --corInicio: #1b061a;
+    --areaServico: #10040f;
+    --corSobre: #080808;
+
+    /* estima */
+    --rosa: #9B5C68;
+
+    /* wpp/insta */
+    --rosa-claro: #703743;
+
+    --texto: #F3EDEA;
+    --texto-secundario: #A99DA2;
+
+    --cinza-rodape: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--preto);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu h1 {
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.opcoes {
+    display: flex;
+    margin-top: 15px;
+    gap: 5%;
+}
+
+.botao-horario {
+    margin-top: 15px;
+    margin-right: 100px;
+}
+
+.inicio {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: var(--corInicio);
+}
+
+.topo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+    width: 55%;
+
+    padding: 35px;
+    padding-top: 100px;
+}
+
+.topo p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.topo h2 {
+    padding: 15px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 0.95;
+}
+
+.estima {
+    font-style: italic;
+    color: var(--rosa);
+}
+
+.topo h4 {
+    max-width: 400px;
+    padding: 15px;
+
+    font-weight: 150;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.topo-botoes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.topo-botoes a {
+    padding: 12px 20px;
+}
+
+.imagem-principal {
+    position: absolute;
+    z-index: 1;
+
+    right: 0;
+    top: 0;
+
+    width: 65%;
+    height: 100%;
+}
+
+.imagem-principal img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 51%;
+}
+
+.imagem-principal::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        var(--corInicio) 0%,
+        transparent 45%
+    );
+}
+
+.area-galeria {
+    display: flex;
+    position: relative;
+
+    width: 100%;
+    height: 400px;
+
+    background-color: var(--areaServico);
+}
+
+.conteiner-img {
+    position: relative;
+    width: 50%;
+}
+
+.conteiner-img::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        transparent 60%,
+        var(--areaServico) 100%
+    );
+}
+
+.conteiner-img img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.conteiner-galeria {
+    display: flex;
+    flex-direction: column;
+
+    width: 65%;
+    margin-left: -15%;
+
+    position: relative;
+    z-index: 2;
+}
+
+.conteiner-galeria h3 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.servicos {
+    display: flex;
+    min-height: 280px;
+    border-left: 1px solid var(--roxo-secundario);
+    transition: flex 0.5s ease;
+}
+
+.servicos-titulo,
+.servico {
+    flex: 1;
+    padding: 30px;
+}
+
+.servico {
+    border-left: 1px solid var(--roxo-secundario);
+    transition: flex 0.5s ease;
+}
+
+.servico:hover {
+    flex: 2; 
+}
+
+.servico h3 {
+    margin-top: 25px;
+}
+
+.servico p {
+    margin-top: 15px;
+}
+
+.servico span:last-child {
+    margin-top: auto;
+}
+
+.servicos-titulo {
+    display: flex;
+    align-items: flex-end;
+}
+
+.servicos-titulo h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+
+.sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--corSobre);
+
+    margin-top: 3%;
+    padding: 0 5%;
+
+    scroll-margin-top: 50px;
+}
+
+.foto-sobre {
+    overflow: hidden;
+
+    width: 15%;
+    height: 250px;
+}
+
+.foto-sobre img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.info-sobre {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.info-sobre h2 {
+    margin-top: 15px;
+    color: var(--texto-secundario);
+}
+
+.info-sobre p {
+    max-width: 850px;
+
+    padding: 2px;
+
+    font-size: 13px;
+    font-weight: 300;
+
+    color: var(--texto-secundario);
+
+    text-align: center;
+}
+
+.info-sobre a {
+    transition: color 0.3s ease;
+}
+
+.info-sobre a:hover {
+    color: var(--rosa-claro);
+}
+
+footer {
+    padding: 5px;
+}
+
+footer p {
+    text-align: center;
+
+    font-size: 11px;
+    color: var(--cinza-rodape);
+}
+
+
+@media (max-width: 900px) {
+
+    .menu {
+        padding: 10px 20px;
+        align-items: center;
+    }
+
+    .menu h1 {
+        font-size: 18px;
+        padding: 0;
+    }
+
+    .opcoes {
+        margin-top: 0;
+        gap: 15px;
+    }
+
+    .opcoes a {
+        font-size: 14px;
+    }
+
+    .botao-horario {
+        margin: 0;
+    }
+
+    .botao-horario a {
+        font-size: 14px;
+    }
+
+
+    /* INÍCIO */
+
+    .inicio {
+        height: 450px;
+    }
+
+    .topo {
+        width: 60%;
+        padding: 90px 20px 30px;
+    }
+
+    .topo p {
+        font-size: 12px;
+    }
+
+    .topo h2 {
+        font-size: 48px;
+    }
+
+    .topo h4 {
+        font-size: 12px;
+    }
+
+    .imagem-principal {
+        width: 70%;
+    }
+
+
+    /* SERVIÇOS */
+
+    .area-galeria {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .conteiner-img {
+        width: 45%;
+    }
+
+    .conteiner-galeria {
+        width: 70%;
+        margin-left: -15%;
+        padding-bottom: 30px;
+    }
+
+    .servicos {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .servicos img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .alongamentos,
+    .manutencao,
+    .nail-art {
+        width: 160px;
+    }
+
+
+    /* SOBRE */
+
+    .foto-sobre {
+        width: 25%;
+        height: 250px;
+    }
+
+    .info-sobre {
+        width: 90%;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        position: absolute;
+    }
+
+    .menu {
+        padding: 12px 15px;
+        align-items: center;
+    }
+
+    .menu h1 {
+        font-size: 18px;
+    }
+
+    /*
+       No celular escondemos o menu central.
+       Depois podemos criar um menu hambúrguer.
+    */
+
+    .opcoes {
+        display: none;
+    }
+
+    .botao-horario {
+        margin: 0;
+    }
+
+    .botao-horario a {
+        font-size: 12px;
+    }
+
+
+    /* INÍCIO */
+
+    .inicio {
+        height: 600px;
+    }
+
+    .imagem-principal {
+        width: 100%;
+        height: 100%;
+    }
+
+    .imagem-principal img {
+        object-position: center;
+    }
+
+    /*
+       No desktop o degradê vai da esquerda
+       para a direita.
+
+       No celular fazemos de baixo para cima,
+       porque texto e imagem passam a ocupar
+       praticamente o mesmo espaço.
+    */
+
+    .imagem-principal::after {
+        background:
+            linear-gradient(
+                to top,
+                var(--corInicio) 15%,
+                rgba(18, 2, 18, 0.85) 45%,
+                rgba(18, 2, 18, 0.25) 100%
+            );
+    }
+
+    .topo {
+        width: 100%;
+        height: 100%;
+
+        justify-content: flex-end;
+        align-items: center;
+
+        padding: 80px 25px 40px;
+
+        text-align: center;
+    }
+
+    .topo p {
+        font-size: 10px;
+    }
+
+    .topo h2 {
+        font-size: 46px;
+        padding: 15px 0;
+    }
+
+    .topo h4 {
+        font-size: 12px;
+        padding: 10px 0;
+        max-width: 350px;
+    }
+
+    .topo-botoes {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .topo-botoes a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+
+    /* SERVIÇOS */
+
+    .area-galeria {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .conteiner-img {
+        width: 100%;
+        height: 300px;
+    }
+
+    /*
+       Como a imagem agora fica em cima,
+       o degradê também muda de direção.
+    */
+
+    .conteiner-img::after {
+        background:
+            linear-gradient(
+                to bottom,
+                transparent 50%,
+                var(--preto) 100%
+            );
+    }
+
+    .conteiner-galeria {
+        width: 100%;
+        margin-left: 0;
+
+        padding: 20px;
+    }
+
+    .conteiner-galeria h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .servicos {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    .servicos img {
+        width: 100%;
+        height: 250px;
+
+        object-fit: cover;
+    }
+
+
+    /* SOBRE */
+
+    .sobre {
+        margin-top: 50px;
+        padding: 0 20px;
+    }
+
+    .foto-sobre {
+        width: 60%;
+        height: 300px;
+    }
+
+    .info-sobre {
+        width: 100%;
+        padding: 20px 0 0;
+        gap: 12px;
+    }
+
+    .info-sobre h2 {
+        font-size: 26px;
+    }
+
+    .info-sobre p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 30px;
+    }
+}
